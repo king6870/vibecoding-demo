@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  darkMode: 'class', // Enable class-based dark mode
   content: [
     './pages/**/*.{js,ts,jsx,tsx,mdx}',
     './components/**/*.{js,ts,jsx,tsx,mdx}',
@@ -10,6 +11,41 @@ module.exports = {
       colors: {
         background: 'var(--background)',
         foreground: 'var(--foreground)',
+        'background-secondary': 'var(--background-secondary)',
+        'background-tertiary': 'var(--background-tertiary)',
+        'foreground-secondary': 'var(--foreground-secondary)',
+        'foreground-tertiary': 'var(--foreground-tertiary)',
+        border: 'var(--border)',
+        'border-hover': 'var(--border-hover)',
+        primary: {
+          DEFAULT: 'var(--primary)',
+          hover: 'var(--primary-hover)',
+          foreground: 'var(--primary-foreground)',
+        },
+        accent: {
+          DEFAULT: 'var(--accent)',
+          hover: 'var(--accent-hover)',
+        },
+      },
+      animation: {
+        'slide-in': 'slideIn 0.3s ease-out',
+        'fade-in': 'fadeIn 0.2s ease-in',
+        'spin-slow': 'spin 3s linear infinite',
+        'scale-in': 'scaleIn 0.2s ease-out',
+      },
+      keyframes: {
+        slideIn: {
+          '0%': { transform: 'translateX(-100%)', opacity: '0' },
+          '100%': { transform: 'translateX(0)', opacity: '1' },
+        },
+        fadeIn: {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' },
+        },
+        scaleIn: {
+          '0%': { transform: 'scale(0.95)', opacity: '0' },
+          '100%': { transform: 'scale(1)', opacity: '1' },
+        },
       },
     },
   },

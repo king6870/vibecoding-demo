@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
-import Navigation from '@/components/Navigation';
-import Footer from '@/components/Footer';
+import { ThemeProvider } from './providers/ThemeProvider';
+import LayoutContent from '@/components/LayoutContent';
 import './globals.css';
 
 const inter = Inter({ subsets: ['latin'] });
@@ -17,15 +17,23 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              try {
+                const theme = localStorage.getItem('theme') || 'light';
+                document.documentElement.classList.add(theme);
+              } catch (e) {}
+            `,
+          }}
+        />
+      </head>
       <body className={inter.className}>
-        <div className="flex flex-col min-h-screen">
-          <Navigation />
-          <main className="flex-grow">
-            {children}
-          </main>
-          <Footer />
-        </div>
+        <ThemeProvider>
+          <LayoutContent>{children}</LayoutContent>
+        </ThemeProvider>
       </body>
     </html>
   );

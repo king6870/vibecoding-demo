@@ -1,0 +1,48 @@
+# Python Backend Requirements
+# FastAPI and dependencies
+fastapi==0.109.0
+uvicorn[standard]==0.27.0
+pydantic==2.5.3
+pydantic-settings==2.1.0
+
+# CORS support
+python-multipart==0.0.6
+
+# Database drivers (for future use)
+# Uncomment when needed:
+# psycopg2-binary==2.9.9  # PostgreSQL
+# pymongo==4.6.1          # MongoDB
+# sqlalchemy==2.0.25      # ORM
+
+# Authentication (for future Google OAuth)
+# Uncomment when implementing:
+# python-jose[cryptography]==3.3.0
+# passlib[bcrypt]==1.7.4
+# python-dotenv==1.0.0
+
+# Testing
+pytest==7.4.4
+pytest-asyncio==0.23.3
+httpx==0.26.0
+
+# Code quality
+black==23.12.1
+flake8==7.0.0
+mypy==1.8.0
+
+# Environment management
+python-dotenv==1.0.0
+
+# Next.js Frontend Requirements (install via npm/pnpm)
+# These are listed for reference - install using package.json:
+# - next@14+
+# - react@18+
+# - react-dom@18+
+# - typescript@5+
+# - tailwindcss@3+
+# - next-auth@5+ (for future Google authentication)
+# - @types/node
+# - @types/react
+# - @types/react-dom
+# - eslint
+# - eslint-config-next
